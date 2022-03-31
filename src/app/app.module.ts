@@ -12,13 +12,17 @@ import {MatIconModule} from '@angular/material/icon';
 //import { RouterModule } from './app-routing/app-routing.module';
 import{routing} from './app-routing/app-routing.module';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { AddCategoriesComponent } from './pages/admin/add-categories/add-categories.component';
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     ProfileComponent,
     SidebarComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ViewCategoriesComponent,
+    AddCategoriesComponent
   ],
   imports: [
     BrowserModule,
