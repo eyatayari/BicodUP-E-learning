@@ -14,6 +14,13 @@ import{routing} from './app-routing/app-routing.module';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { AddCategoriesComponent } from './pages/admin/add-categories/add-categories.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import{MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { FormsModule } from '@angular/forms';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +29,8 @@ import { AddCategoriesComponent } from './pages/admin/add-categories/add-categor
     SidebarComponent,
     WelcomeComponent,
     ViewCategoriesComponent,
-    AddCategoriesComponent
+    AddCategoriesComponent,
+    ViewQuizzesComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +38,13 @@ import { AddCategoriesComponent } from './pages/admin/add-categories/add-categor
     MatListModule,
     MatCardModule,
     MatIconModule,
-    routing
+    routing,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
