@@ -9,14 +9,22 @@
     <p>{{quiz.description}}</p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-flat-button color="accent">Questions</button>
+        <button 
+        [routerLink]="'/admin/view-questions/'+quiz.idquiz+'/'+ quiz.title"
+         mat-flat-button color="accent">
+            Questions
+        </button>
+
         <button mat-stroked-button color="accent" class="ml20">Max Marks : {{quiz.maxMarks}}</button>
         <button mat-stroked-button color="accent" class="ml20">Questions: {{quiz.nbrquestion}}</button>
-        <button mat-flat-button color="accent" class="ml20">Update</button>
+        <button [routerLink]="'/admin/quiz/' + quiz.idquiz " mat-flat-button color="accent" class="ml20">Update</button>
         <button mat-flat-button color="accent" class="ml20">Attempts</button>
+        <button mat-flat-button color="warn" class="ml20" (click)="deleteQuiz(quiz.idquiz)">
+            Delete
+        </button>
 
     </mat-card-actions>
 </mat-card>
 <div class="container text-center mt20">
-    <button mat-raised-button color="accent">Add Quiz</button>
+    <button routerLink="/admin/add-quiz" mat-raised-button color="accent">Add Quiz</button>
 </div>

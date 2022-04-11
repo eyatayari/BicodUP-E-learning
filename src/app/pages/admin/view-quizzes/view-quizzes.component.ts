@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from 'src/app/services/quiz.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-view-quizzes',
@@ -18,7 +19,7 @@ export class ViewQuizzesComponent implements OnInit {
     category:{
       title:'programming'
     }
-  },{idquiz:'23',
+  },{idquiz:'25',
   title:'java basic',
   description:'java quiz basic description',
   active:'',
@@ -29,20 +30,43 @@ export class ViewQuizzesComponent implements OnInit {
   }
 },
 ]
-  constructor(private _quiz:QuizService) { 
-  }
+  /*constructor(private _quiz:QuizService) { 
+  }*/
 
-  ngOnInit(): void {
+  ngOnInit(): void {/*
     this._quiz.quizzes().subscribe(
       (data:any)=>{
         this.quizzes=data;
         console.log(this.quizzes);
       },
-      (error)=>{
+      (error: any)=>{
         console.log(error);
-        alert('erreur');
+        Swal.fire('Error!','Error in loading data !','error');
       }
-    )
+    )*/
   }
+   //
+  
+   deleteQuiz(idquiz: any){
+    Swal.fire({
+      icon:'info',
+      title:'Are you sure ?',
+      confirmButtonText: 'Delete',
+      showCancelButton:true,
+    }).then((result)=>{
 
+      if(result.isConfirmed)
+        {/*
+          //delete
+          this._quiz.deleteQuiz(idquiz).subscribe((data)=>{
+            this.quizzes = this.quizzes.filter((quiz)=>quiz.idquiz!=idquiz) 
+           Swal.fire('Success!',' Quiz deleted !','success');
+            },
+            (error: any)=>{
+              Swal.fire('Error!','Error in deleting quiz !','error');
+            } );*/
+
+        }
+    })
+   }
 }
