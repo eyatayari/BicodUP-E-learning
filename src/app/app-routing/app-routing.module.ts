@@ -7,7 +7,10 @@ import { AppComponent } from '../app.component';
 import { ViewCategoriesComponent } from '../pages/admin/view-categories/view-categories.component';
 import { AddCategoriesComponent } from '../pages/admin/add-categories/add-categories.component';
 import { ViewQuizzesComponent } from '../pages/admin/view-quizzes/view-quizzes.component';
-
+import {AddQuizComponent} from '../pages/admin/add-quiz/add-quiz.component';
+import { UpdateQuizComponent } from '../pages/admin/update-quiz/update-quiz.component';
+import { ViewQuizQuestionsComponent } from '../pages/admin/view-quiz-questions/view-quiz-questions.component';
+import {AddQuestionComponent} from '../pages/admin/add-question/add-question.component';;
 const routes: Routes = [
   { path: 'admin', 
   component: DashboardComponent,
@@ -27,6 +30,18 @@ children:[{
 },{
   path:'quizzes',
   component:ViewQuizzesComponent
+},{
+  path:'add-quiz',
+  component:AddQuizComponent
+},{
+  path:'quiz/:idquiz',
+  component:UpdateQuizComponent,
+},{
+  path:'view-questions/:idquiz/:title',
+  component:ViewQuizQuestionsComponent,
+},{
+  path:'add-question/:idquiz/:title',
+  component:AddQuestionComponent,
 }
 
 ]},
